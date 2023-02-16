@@ -22,12 +22,12 @@
         </div>
       <div class="content">
         <table class="players">
-          {% for i in oyinchi %}
-          <tr>
-            <td>{{ i.ism }}</td>
-            <td>{{ bugun|add:'i.tug_yil' }}</td>
-            <td>{{ i.club }}</td>
-            <td>{{ i.tr_narx }}</td>
+          {% for i in oynchi %}
+            <tr>
+              <td>{{ i.ism }}</td>
+              <td>{{ bugun|sub:i.tug_yil.year }}</td>
+              <td>{{ i.club }}</td>
+              <td>{{ i.tr_narx }}</td>
           </tr>
           {% endfor %}
 

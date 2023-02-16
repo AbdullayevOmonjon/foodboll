@@ -40,7 +40,7 @@ def u_20_player(request):
     'oynchi':Player.objects.filter(tug_yil__range=[boshi,bugun]).order_by('-tr_narx','tug_yil'),
     'bugun':bugun.year
   }
-  return render(request,'U-20 players.html',date)
+  return render(request,'U-20 players.html',data)
 
 def hamma_mavsum(request):
   h_mavsum=HozirgiMavsum.objects.last().mavsum
@@ -57,6 +57,7 @@ def mavsum(request,mavsum):
 
 
 def index(request):
+  
   return render(request,'index.html')
 
 def player(request):
@@ -73,3 +74,9 @@ def davlat(request,davlat):
 
 def tryouts(request):
   return render(request,'tryouts.html')
+
+def stats(request):
+  return render(request,'stats.html')
+
+def courses(request):
+  return render(request,'courses.html')

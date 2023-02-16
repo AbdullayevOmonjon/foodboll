@@ -62,7 +62,7 @@
 
         <div class="icon">
           <a href="{% url 'index' %}">
-            <img src="img/12252568_173-removebg-preview.png" alt="" />
+            <img src="/media/football_transfers.png" alt="" />
           </a>
         </div>
         <div class="links">
@@ -70,16 +70,17 @@
           <div><a href="{% url 'latest_transfers' %}">LATEST TRANSFERS</a></div>
           <div><a href="{% url 'players' %}">PLAYERS</a></div>
           <div><a href="{% url 'u_20_players' %}">U-20 PLAYERS</a></div>
-          <div><a href="./tryouts.html">TRYOUTS</a></div>
-          <div><a href="./stats.html">STATS</a></div>
-          <div class="navActive"><a href="#">ABOUT US</a></div>
+          <div><a href="{% url 'tryouts' %}">TRYOUTS</a></div>
+          <div><a href="{% url 'stats' %}">STATS</a></div>
+          <div class="navActive"><a href="{% url 'about' %}">ABOUT US</a></div>
         </div>
       </div>
       <div class="country-clubs">
         <h2 id="title">Clubs by country</h2>
         <div class="country">
+          {% for i in davlat%}
           <div>
-            <h3><a href="./countries/england.html">England</a> <br /></h3>
+            <h3><a href="{% url 'england' %}">England</a> <br /></h3>
             <h3><a href="./countries/italy.html">italy</a> <br /></h3>
             <h3><a href="./countries/france.html">France</a> <br /></h3>
             <h3>
@@ -98,7 +99,7 @@
           </div>
         </div>
          <hr>
-        <h2><a href="/transfer-archive/">Transfers archive</a></h2>
+        <h2><a href="{% url 'transfer_archive' %}">Transfers archive</a></h2>
       </div>
         {% block content %}
 

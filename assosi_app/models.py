@@ -31,7 +31,7 @@ class Transfer(models.Model):
   tax_narxi=models.FloatField()
   mavsum=models.CharField(max_length=30)
   def __str__(self) -> str:
-    return self.player
+    return self.mavsum
   
 class HozirgiMavsum(models.Model):
   mavsum=models.CharField(max_length=25)

@@ -1,4 +1,4 @@
-{% {% extends 'header.html' %}%}
+{% extends 'header.html' %}
     {% block content %}
         <hr>
         <h2><a href="#">Transfers archive</a></h2>
@@ -9,21 +9,11 @@
       </div>
       <div class="content">
         <div class="stats">
+          {% for i in transferlar %}
           <div>
-            <a href="./2017-18season.html">Season 2017-18</a>
+            <a href="{% url 'mavsum' i.mavsum|slice:':2' %}"> season 20{{i.mavsum}}</a>
           </div>
-          <div>
-            <a href="./2018-19season.html">Season 2018-19</a>
-          </div>
-          <div>
-            <a href="./2019-20season.html">Season 2019-20</a>
-          </div>
-          <div>
-            <a href="./2020-21season.html">Season 2020-21</a>
-          </div>
-          <div>
-            <a href="../latest-transfers.html">Latest-transfers</a>
-          </div>
+          {% endfor %}
         </div>
       </div>
     {% endblock %}
